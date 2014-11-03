@@ -1,5 +1,6 @@
 package generalManager;
 
+import languageManager.NLU;
 import dm.DialogManager;
 
 /**
@@ -25,6 +26,8 @@ public class Main {
 	private Main() {
 		this.isRunning = false;
 		dm = DialogManager.getDM();
+		//Loads keywordsfile
+		NLU.getNLU().loadKeywordsFromFile("resources/keywords.bgram");
 	}
 	
 	/**
