@@ -11,5 +11,7 @@ public enum CommandState {
 	
 	STARTE,
 	
-	MESSEN;
+	MESSEN,
+	
+	BEENDE;
 }
