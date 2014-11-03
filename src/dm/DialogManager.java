@@ -2,6 +2,7 @@ package dm;
 
 import java.util.ArrayList;
 
+import languageManager.NLG;
 import languageManager.NLU;
 
 /**
@@ -15,6 +16,7 @@ import languageManager.NLU;
 public class DialogManager {
 
 	private String currentInput;
+	private CommandState currentState;
 	private static DialogManager singleDm = null;
 	
 	private DialogManager() {
@@ -29,8 +31,8 @@ public class DialogManager {
 		this.currentInput = currentInput;
 		
 		//Calls the NLU to analyze input and return list of found keywords
-		decideState(NLU.analyze(currentInput));
-		
+		decideState(NLU.getNLU().analyze(currentInput));
+		showResult();
 		//TODO continue implementation of DM.go()
 	}
 	
@@ -40,7 +42,8 @@ public class DialogManager {
 	 */
 	private void decideState(ArrayList<String> keywords) {
 		//TODO implement decideState
-		
+		if (keywords.contains("Zeig mir"))
+			this.setCurrentState(CommandState.ZEIGMIR);
 	}
 	
 	/**
@@ -52,6 +55,27 @@ public class DialogManager {
 			singleDm = new DialogManager();
 			return singleDm;
 		} else return singleDm;
+	}
+	
+	//TODO
+	private void showResult() {
+		System.out.println(NLG.getResult());
+	}
+
+	public String getCurrentInput() {
+		return currentInput;
+	}
+
+	public void setCurrentInput(String currentInput) {
+		this.currentInput = currentInput;
+	}
+
+	public CommandState getCurrentState() {
+		return currentState;
+	}
+
+	public void setCurrentState(CommandState currentState) {
+		this.currentState = currentState;
 	}
 	
 }
