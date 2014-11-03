@@ -32,10 +32,16 @@ public class NLU {
 	 * @param input the given user input
 	 * @return a list with the found keywords
 	 */
-	public static ArrayList<String> analyze(String input) {
+	public ArrayList<String> analyze(String input) {
 		/*TODO analyze input and extract important keywords! List the keywords and return them to the DM*/
+		ArrayList<String> foundKeywords = new ArrayList<String>();
+		for (String key: this.keywords) {
+			if (input.contains(key)) {
+				foundKeywords.add(key);
+			}
+		}
 		
-		return null;
+		return foundKeywords;
 	}
 	
 	/**
