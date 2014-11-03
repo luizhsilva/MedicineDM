@@ -13,5 +13,7 @@ public enum CommandState {
 	
 	MESSEN,
 	
-	BEENDE;
+	BEENDE,
+	
+	NOTFOUND;
 }
