@@ -39,17 +39,6 @@ public class DialogManager {
 	}
 	
 	/**
-	 * Decides for a next state based on the list of keywords.
-	 * @param keywords the list of found keywords in a phase (NLU normally)
-	 */
-	private void decideState(KeywordCapsule keywordsCapsule) {
-		//TODO implement decideState
-		if (keywordsCapsule.getCommandKeywords().contains("Zeig mir"))
-			this.setCurrentState(CommandState.ZEIGMIR);
-		
-	}
-	
-	/**
 	 * 
 	 * @return Single instance of Dialog Manager
 	 */
@@ -79,6 +68,30 @@ public class DialogManager {
 
 	public void setCurrentState(CommandState currentState) {
 		this.currentState = currentState;
+	}
+	
+	/**
+	 * Decides for a next state based on the list of keywords.
+	 * @param keywords the list of found keywords in a phase (NLU normally)
+	 */
+	private void decideState(KeywordCapsule keywordsCapsule) {
+		//TODO implement decideState
+		if (keywordsCapsule.getCommandKeywords().contains("Zeig mir")) {
+			this.setCurrentState(CommandState.ZEIGMIR);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Wo ist")) {
+			this.setCurrentState(CommandState.WOIST);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Starte")) {
+			this.setCurrentState(CommandState.STARTE);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Blende ein")) {
+			this.setCurrentState(CommandState.BLENDEEIN);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Blende aus")) {
+			this.setCurrentState(CommandState.BLENDEAUS);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Beende")) {
+			this.setCurrentState(CommandState.BEENDE);
+		} else if (keywordsCapsule.getCommandKeywords().contains("Messen")) {
+			this.setCurrentState(CommandState.MESSEN);
+		} else this.setCurrentState(CommandState.NOTFOUND);
+		
 	}
 	
 }
