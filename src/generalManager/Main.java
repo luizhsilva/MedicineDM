@@ -27,7 +27,7 @@ public class Main {
 		this.isRunning = false;
 		dm = DialogManager.getDM();
 		//Loads keywordsfile
-		NLU.getNLU().loadKeywordsFromFile("resources/keywords.bgram");
+		NLU.getNLU().loadKeywordsFromFile("resources/keywords/keywords.bgram");
 	}
 	
 	/**

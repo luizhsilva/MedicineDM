@@ -20,11 +20,21 @@ public class NLU {
 	/** List of predefined keywords */
 	private ArrayList<String> keywords = null;
 	
+	//keywords separated per type
+	private ArrayList<String> commandKeywords;
+	private ArrayList<String> anatStructKeywords;
+	private ArrayList<String> processKeywords;
+	private ArrayList<String> objectsKeywords;
+	
 	/**
 	 * Private constructor to be called only by {@link #getNLU()}.
 	 */
 	private NLU() {
 		this.keywords = new ArrayList<String>();
+		this.anatStructKeywords = new ArrayList<String>();
+		this.commandKeywords = new ArrayList<String>();
+		this.objectsKeywords = new ArrayList<String>();
+		this.processKeywords = new ArrayList<String>();
 	}
 	
 	/**
@@ -32,16 +42,39 @@ public class NLU {
 	 * @param input the given user input
 	 * @return a list with the found keywords
 	 */
-	public ArrayList<String> analyze(String input) {
+	public KeywordCapsule analyze(String input) {
 		/*TODO analyze input and extract important keywords! List the keywords and return them to the DM*/
-		ArrayList<String> foundKeywords = new ArrayList<String>();
-		for (String key: this.keywords) {
+		
+		ArrayList<String> foundCommandKeywords = new ArrayList<String>();
+		ArrayList<String> foundAnatStructKeywords = new ArrayList<String>();
+		ArrayList<String> foundObjectsKeywords = new ArrayList<String>();
+		ArrayList<String> foundProcessKeywords = new ArrayList<String>();
+		
+		for (String key: this.commandKeywords) {
 			if (input.contains(key)) {
-				foundKeywords.add(key);
+				foundCommandKeywords.add(key);
 			}
 		}
 		
-		return foundKeywords;
+		for (String key: this.anatStructKeywords) {
+			if (input.contains(key)) {
+				foundAnatStructKeywords.add(key);
+			}
+		}
+		
+		for (String key: this.objectsKeywords) {
+			if (input.contains(key)) {
+				foundObjectsKeywords.add(key);
+			}
+		}
+		
+		for (String key: this.processKeywords) {
+			if (input.contains(key)) {
+				foundProcessKeywords.add(key);
+			}
+		}
+		
+		return new KeywordCapsule(foundCommandKeywords, foundAnatStructKeywords, foundObjectsKeywords, foundProcessKeywords);
 	}
 	
 	/**
@@ -65,7 +98,31 @@ public class NLU {
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
-					keywords.add(line);
+					this.keywords.add(line);
+		    }
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		this.loadAnatStructKeywords();
+		this.loadCommandKeywords();
+		this.loadObjectsKeywords();
+		this.loadProcessesKeywords();
+	}
+	
+	/**
+	 * 
+	 */
+	private void loadCommandKeywords() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/commands.bgram"));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (!line.equals("") && !line.startsWith("//")) //ignore comments
+					this.commandKeywords.add(line);
 		    }
 			reader.close();
 		} catch (FileNotFoundException e) {
@@ -75,4 +132,60 @@ public class NLU {
 		}
 	}
 	
+	/**
+	 * 
+	 */
+	private void loadProcessesKeywords() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/processes.bgram"));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (!line.equals("") && !line.startsWith("//")) //ignore comments
+					this.processKeywords.add(line);
+		    }
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	private void loadAnatStructKeywords() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/anat_structs.bgram"));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (!line.equals("") && !line.startsWith("//")) //ignore comments
+					this.anatStructKeywords.add(line);
+		    }
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * 
+	 */
+	private void loadObjectsKeywords() {
+		try {
+			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/other_objects.bgram"));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				if (!line.equals("") && !line.startsWith("//")) //ignore comments
+					this.objectsKeywords.add(line);
+		    }
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 }
