@@ -2,6 +2,7 @@ package dm;
 
 import java.util.ArrayList;
 
+import languageManager.KeywordCapsule;
 import languageManager.NLG;
 import languageManager.NLU;
 
@@ -31,8 +32,9 @@ public class DialogManager {
 		this.currentInput = currentInput;
 		
 		//Calls the NLU to analyze input and return list of found keywords
-		decideState(NLU.getNLU().analyze(currentInput));
-		showResult();
+		KeywordCapsule capsule = NLU.getNLU().analyze(currentInput);
+		decideState(capsule);
+		showResult(capsule);
 		//TODO continue implementation of DM.go()
 	}
 	
@@ -40,10 +42,11 @@ public class DialogManager {
 	 * Decides for a next state based on the list of keywords.
 	 * @param keywords the list of found keywords in a phase (NLU normally)
 	 */
-	private void decideState(ArrayList<String> keywords) {
+	private void decideState(KeywordCapsule keywordsCapsule) {
 		//TODO implement decideState
-		if (keywords.contains("Zeig mir"))
+		if (keywordsCapsule.getCommandKeywords().contains("Zeig mir"))
 			this.setCurrentState(CommandState.ZEIGMIR);
+		
 	}
 	
 	/**
@@ -58,8 +61,8 @@ public class DialogManager {
 	}
 	
 	//TODO
-	private void showResult() {
-		System.out.println(NLG.getResult());
+	private void showResult(KeywordCapsule capsule) {
+		System.out.println(NLG.getResult(capsule));
 	}
 
 	public String getCurrentInput() {
