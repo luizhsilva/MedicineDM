@@ -1,0 +1,96 @@
+#JSGF V1.0 utf-8 english;
+
+grammar dialog_01;
+
+public <generic:action,VP,_> = <act_instructionShow,V,_> | <act_instructionLocation,V,_> | <act_instructionStartProcess,V,_> | <act_instructionEndProcess,V,_> | <act_instructionMeasure,V,_> | <act_instructionFadeIn,V,_> | <act_instructionFadeOut,V,_> | <unk_process>;
+
+public <artikel>= der | die | das | den | dem;
+
+<obj_LUreter,N,_>= [<artikel>] [linker | linken] Ureter;
+
+<obj_RUreter,N,_>= [<artikel>] [rechter | rechten] Ureter;
+
+<obj_LNiere,N,_>= [<artikel>] [linke | linker] Niere;
+
+<obj_RNiere,N,_>= [<artikel>] [rechte | rechter] Niere;
+
+<obj_Pankreas,N,_>= [<artikel>] Pankreas;
+
+<obj_Pankreaskopf,N,_>= [<artikel>] Pankreaskopf;
+
+<obj_Pankreasschwanz,N,_>= [<artikel>] Pankreasschwanz;
+
+<obj_Magen,N,_>= [<artikel>] Magen;
+
+<obj_Milz,N,_>= [<artikel>] Milz;
+
+<obj_Leber,N,_>= [<artikel>] Leber;
+
+<obj_LLeberlappen,N,_>= [<artikel>] [linker | linken] Leberlappen;
+
+<obj_RLeberlappen,N,_>= [<artikel>] [rechter | rechten] Leberlappen;
+
+<obj_Aorta,N,_>= [<artikel>] Aorta;
+
+<obj_VenaCava,N,_>= [<artikel>] Vena cava;
+
+<obj_Resektionslinie,N,_>= [<artikel>] Resektionslinie;
+
+<obj_Gefäßbaum,N,_>= [<artikel>] Gefäßbaum;
+
+<obj_VirtuellesModell,N,_>= [<artikel>] (Virtuelle | Virtuelles) Modell;
+
+<obj_3D-Rekonstruktion,N,_>= [<artikel>] (3|drei) (D|d) Rekonstruktion [<obj_anatstruct,N,_>];
+
+<obj_Registrierung,N,_>= [<artikel>] Registrierung;
+
+<obj_Registrierungsfehler,N,_>= [<artikel>] Registrierungsfehler;
+
+<obj_Bauchdecke,N,_>= [<artikel>] Bauchdecke;
+
+<obj_Endoskopposition,N,_>= [<artikel>] Endoskopposition;
+
+<obj_Verschiebungsfeld,N,_>= [<artikel>] Verschiebungsfeld;
+
+<obj_Navigation,N,_>= [<artikel>] Navigation;
+
+<obj_Uhrzeit,N,_>= [<artikel>] Uhrzeit;
+
+<obj_Darmlänge,N,_>= [<artikel>] Darmlänge;
+
+<obj_Darmvermessung,N,_>= [<artikel>] Darmvermessung;
+
+<obj_Tumor,N,_>= [<artikel>] Tumor;
+
+<obj_Lehrmodus,N,_>= [<artikel>] Lehrmodus;
+
+<obj_CT-Modus,N,_>= [<artikel>] CT-Modus;
+
+
+
+<m_object>= <obj_anatstruct,N,_> | <obj_VirtuellesModell,N,_> | <obj_3D-Rekonstruktion,N,_> | <obj_Registrierung,N,_> | <obj_Registrierungsfehler,N,_> | <obj_Bauchdecke,N,_> | <obj_Endoskopposition,N,_> | <obj_Verschiebungsfeld,N,_> | <obj_Navigation,N,_> | <obj_Uhrzeit,N,_> | <obj_Darmlänge,N,_> ;
+
+public <obj_organ>= <obj_LUreter,N,_> | <obj_RUreter,N,_> | <obj_LNiere,N,_> | <obj_RNiere,N,_> | <obj_Pankreas,N,_> | <obj_Pankreaskopf,N,_> | <obj_Pankreasschwanz,N,_> | <obj_Magen,N,_> | <obj_Milz,N,_> | <obj_Leber,N,_> | <obj_LLeberlappen,N,_> | <obj_RLeberlappen,N,_> ;
+
+<obj_anatstruct,N,_>= <obj_organ> | <obj_Tumor> | <obj_Aorta,N,_>  | <obj_VenaCava,N,_> | <obj_Resektionslinie,N,_> | <obj_Gefäßbaum,N,_> ;
+
+            
+<process>= <obj_Darmvermessung,N,_> | <obj_Navigation,N,_> | <obj_Registrierung,N,_> | <obj_Lehrmodus,N,_> | <obj_CT-Modus,N,_> ;
+
+            
+<act_instructionShow,V,_>= Zeig mir <obj_anatstruct,N,_> [in <obj_organ>];
+
+<act_instructionLocation,V,_>= Wo ist <obj_anatstruct,N,_> [in <obj_organ>];
+
+<act_instructionStartProcess,V,_>= Starte <process>;
+
+<act_instructionEndProcess,V,_>= Beende <process>;
+
+<act_instructionMeasure,V,_>= Messen;
+
+<act_instructionFadeIn,V,_>= Blende ein <m_object>;
+
+<act_instructionFadeOut,V,_>= Blende aus <m_object>;
+
+<unk_process>= UNK;
+			
