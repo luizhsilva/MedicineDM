@@ -25,6 +25,7 @@ public class NLU {
 	private ArrayList<String> anatStructKeywords;
 	private ArrayList<String> processKeywords;
 	private ArrayList<String> objectsKeywords;
+	private ArrayList<String> articles;
 	
 	/**
 	 * Private constructor to be called only by {@link #getNLU()}.
@@ -35,6 +36,7 @@ public class NLU {
 		this.commandKeywords = new ArrayList<String>();
 		this.objectsKeywords = new ArrayList<String>();
 		this.processKeywords = new ArrayList<String>();
+		this.articles = new ArrayList<String>();
 	}
 	
 	/**
@@ -50,26 +52,27 @@ public class NLU {
 		ArrayList<String> foundObjectsKeywords = new ArrayList<String>();
 		ArrayList<String> foundProcessKeywords = new ArrayList<String>();
 		
+		//Analysis using regex to make sure to get the right keyword.
 		for (String key: this.commandKeywords) {
-			if (input.contains(key)) {
+			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
 				foundCommandKeywords.add(key);
 			}
 		}
 		
 		for (String key: this.anatStructKeywords) {
-			if (input.contains(key)) {
+			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
 				foundAnatStructKeywords.add(key);
 			}
 		}
 		
 		for (String key: this.objectsKeywords) {
-			if (input.contains(key)) {
+			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
 				foundObjectsKeywords.add(key);
 			}
 		}
 		
 		for (String key: this.processKeywords) {
-			if (input.contains(key)) {
+			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
 				foundProcessKeywords.add(key);
 			}
 		}
@@ -92,25 +95,16 @@ public class NLU {
 	 * Loads predefined keywords to {@link #keywords} from file.
 	 * @param filename the path of the file to be read
 	 */
-	public void loadKeywordsFromFile(String filename) {
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(filename));
-			String line;
-			while ((line = reader.readLine()) != null) {
-				if (!line.equals("") && !line.startsWith("//")) //ignore comments
-					this.keywords.add(line);
-		    }
-			reader.close();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
+	public void loadKeywords() {
 		this.loadAnatStructKeywords();
 		this.loadCommandKeywords();
 		this.loadObjectsKeywords();
 		this.loadProcessesKeywords();
+		this.articles.add("die");
+		this.articles.add("der");
+		this.articles.add("das");
+		this.articles.add("den");
+		this.articles.add("dem");
 	}
 	
 	/**
