@@ -44,13 +44,13 @@ public class Main {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		getMain().run();
+		getMain().start();
 	}
 	
 	/**
 	 * Runs Dialog Manager until user stops.
 	 */
-	public void run() {
+	public void start() {
 		isRunning = true;
 		
 		//TODO maybe write it in a more elegant way
@@ -59,7 +59,7 @@ public class Main {
 			System.out.print("\n#> ");
 			nextLine = inputReader.readKeyboard();
 			//if (nextLine.equals("shut down")) isRunning = false;
-			if (nextLine.equals("shut down")) {
+			if (nextLine.toLowerCase().equals("shut down")) {
 				isRunning = false;
 			} else {
 				//Gives the control to Dialog Manager.
@@ -67,11 +67,16 @@ public class Main {
 			}
 			
 		} while(isRunning);
+		
+		this.finish();
 	}
 	
+	/**
+	 * Simply outputs a prompt to inform user that the program has started.
+	 * Loads file, in order to provide easier change.
+	 */
 	private void callPrompt() {
 		try {
-			//URL url = getClass().getResource("resources/keywords/commands.bgram"); 
 			InputStream input = getClass().getResourceAsStream("prompt/init_prompt.txt");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
@@ -79,13 +84,16 @@ public class Main {
 				System.out.println(line);
 		    }
 			
-			//System.out.print("#> ");
 			reader.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	private void finish() {
+		System.out.println("\n>> Programm wurde beendet <<");
 	}
 	
 	/**

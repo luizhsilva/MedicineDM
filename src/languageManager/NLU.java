@@ -42,7 +42,6 @@ public class NLU {
 	 * @return a list with the found keywords
 	 */
 	public KeywordCapsule analyze(String input) {
-		/*TODO analyze input and extract important keywords! List the keywords and return them to the DM*/
 		
 		ArrayList<String> foundCommandKeywords = new ArrayList<String>();
 		ArrayList<String> foundAnatStructKeywords = new ArrayList<String>();
@@ -58,7 +57,6 @@ public class NLU {
 		
 		for (String key: this.anatStructKeywords) {
 			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
-			//if (input.toLowerCase().contains(key.toLowerCase())) {
 				foundAnatStructKeywords.add(key);
 			}
 		}
@@ -111,7 +109,6 @@ public class NLU {
 	private void loadCommandKeywords() {
 		
 		try {
-			//URL url = getClass().getResource("resources/keywords/commands.bgram"); 
 			InputStream input = getClass().getResourceAsStream("keywords/commands.bgram");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
@@ -133,7 +130,6 @@ public class NLU {
 	private void loadProcessesKeywords() {
 		try {
 			InputStream input = getClass().getResourceAsStream("keywords/processes.bgram");
-			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/processes.bgram"));
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
 			while ((line = reader.readLine()) != null) {
@@ -155,7 +151,6 @@ public class NLU {
 		try {
 			InputStream input = getClass().getResourceAsStream("keywords/anat_structs.bgram");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/anat_structs.bgram"));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
@@ -176,7 +171,6 @@ public class NLU {
 		try {
 			InputStream input = getClass().getResourceAsStream("keywords/other_objects.bgram");
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
-			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/other_objects.bgram"));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
