@@ -47,7 +47,11 @@ public class DialogManager {
 		} else return singleDm;
 	}
 	
-	//TODO
+	/**
+	 * Calls the NLG to print the software feedback to the user input.
+	 * 
+	 * @param capsule the KeywordCapsule containing found keywords in user input.
+	 */
 	private void showResult(KeywordCapsule capsule) {
 		System.out.println(NLG.getResult(capsule));
 	}
@@ -73,7 +77,7 @@ public class DialogManager {
 	 * @param keywords the list of found keywords in a phase (NLU normally)
 	 */
 	private void decideState(KeywordCapsule keywordsCapsule) {
-		//TODO implement decideState
+		//TODO improve decideState
 		if (keywordsCapsule.getCommandKeywords().contains("Zeig mir")) {
 			this.setCurrentState(CommandState.ZEIGMIR);
 		} else if (keywordsCapsule.getCommandKeywords().contains("Wo ist")) {

@@ -105,7 +105,7 @@ public class NLU {
 	}
 	
 	/**
-	 * 
+	 * Loads the content of the Commands Keywords File into a List
 	 */
 	private void loadCommandKeywords() {
 		
@@ -130,7 +130,7 @@ public class NLU {
 	}
 	
 	/**
-	 * 
+	 * Loads the content of the Processes Keywords File into a List
 	 */
 	private void loadProcessesKeywords() {
 		try {
@@ -151,7 +151,7 @@ public class NLU {
 	}
 	
 	/**
-	 * 
+	 * Loads the content of the Anatomic Structures Keywords File into a List
 	 */
 	private void loadAnatStructKeywords() {
 		try {
@@ -172,7 +172,7 @@ public class NLU {
 	}
 	
 	/**
-	 * 
+	 * Loads the content of the Objects Keywords File into a List
 	 */
 	private void loadObjectsKeywords() {
 		try {

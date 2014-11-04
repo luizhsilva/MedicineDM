@@ -2,6 +2,14 @@ package languageManager;
 
 import java.util.ArrayList;
 
+/**
+ * This class encapsulates the set of keywords found in the user input. Which means
+ * it contains the a list of keywords for each part of the sentence (command, anatomic
+ * structure, object, processes)
+ * 
+ * @author luizhsilva
+ *
+ */
 public class KeywordCapsule {
 	
 	private ArrayList<String> commandKeywords;
@@ -13,6 +21,13 @@ public class KeywordCapsule {
 		
 	}
 	
+	/**
+	 * 
+	 * @param commandKeywords
+	 * @param anatStructKeywords
+	 * @param objectsKeywords
+	 * @param processKeywords
+	 */
 	public KeywordCapsule(ArrayList<String> commandKeywords,
 			ArrayList<String> anatStructKeywords,
 			ArrayList<String> objectsKeywords, ArrayList<String> processKeywords) {

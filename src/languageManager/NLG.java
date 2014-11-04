@@ -4,6 +4,8 @@ import dm.CommandState;
 import dm.DialogManager;;
 
 /**
+ * The NLG is responsible for producing and deciding which result should be output to the
+ * user, based on which state the program is.
  * 
  * @author luizhsilva
  *
