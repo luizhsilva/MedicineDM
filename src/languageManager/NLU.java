@@ -58,6 +58,7 @@ public class NLU {
 		
 		for (String key: this.anatStructKeywords) {
 			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
+			//if (input.toLowerCase().contains(key.toLowerCase())) {
 				foundAnatStructKeywords.add(key);
 			}
 		}
@@ -112,9 +113,6 @@ public class NLU {
 		try {
 			//URL url = getClass().getResource("resources/keywords/commands.bgram"); 
 			InputStream input = getClass().getResourceAsStream("keywords/commands.bgram");
-			if (input == null) {
-				System.out.println("Shit");
-			}
 			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
 			while ((line = reader.readLine()) != null) {
