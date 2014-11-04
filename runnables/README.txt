@@ -35,8 +35,8 @@
 	- Wo ist (+ anatomic structure)
 	- Starte (+ Process)
 	- Beende (+ Process)
-	- Blende aus (+ Object/Process/Anatomic Structure)
-	- Blende ein (+ Object/Process/Anatomic Structure)
+	- Blende aus (+ Object/Anatomic Structure)
+	- Blende ein (+ Object/Anatomic Structure)
 	- Messen
 	
 	The commands will expect an object. The object can be either an
@@ -70,11 +70,14 @@
 	- Uhrzeit
 	- Darmlänge
 	- Darmvermessung
+	- (Navigation)
+	- (Virtuelles Modell/ Virtuelle Model)
+	- (3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion)
 
 	Processes:
-	- Navigation
-	- Virtuelles Modell/ Virtuelle Modell
-	- 3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion
+	- Navigation (also seen as Object)
+	- Virtuelles Modell/ Virtuelle Modell (also seen as Object)
+	- 3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion (also seen as Object)
 	- Lehrmodus
 	- CT-Modus/ CT Modus
 	
