@@ -1,5 +1,11 @@
 package generalManager;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+
 import languageManager.NLU;
 import dm.DialogManager;
 
@@ -19,15 +25,19 @@ public class Main {
 	
 	//Flags
 	private boolean isRunning;
+	//private boolean isLoaded;
 	
 	/**
 	 * Private constructor of main, only used to create Singleton Main.
 	 */
 	private Main() {
 		this.isRunning = false;
+		//this.isLoaded = false;
 		dm = DialogManager.getDM();
 		//Loads keywords files
 		NLU.getNLU().loadKeywords();
+		
+		this.callPrompt();
 	}
 	
 	/**
@@ -46,6 +56,7 @@ public class Main {
 		//TODO maybe write it in a more elegant way
 		//Loops until user shuts it down.
 		do{
+			System.out.print("\n#> ");
 			nextLine = inputReader.readKeyboard();
 			//if (nextLine.equals("shut down")) isRunning = false;
 			if (nextLine.equals("shut down")) {
@@ -56,6 +67,25 @@ public class Main {
 			}
 			
 		} while(isRunning);
+	}
+	
+	private void callPrompt() {
+		try {
+			//URL url = getClass().getResource("resources/keywords/commands.bgram"); 
+			InputStream input = getClass().getResourceAsStream("prompt/init_prompt.txt");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+			String line;
+			while ((line = reader.readLine()) != null) {
+				System.out.println(line);
+		    }
+			
+			//System.out.print("#> ");
+			reader.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	/**

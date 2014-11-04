@@ -3,6 +3,8 @@ package dm;
 public enum CommandState {
 	ZEIGMIR,
 	
+	ZEIGMIRTUMOR,
+	
 	WOIST,
 	
 	BLENDEAUS,
