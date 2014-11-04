@@ -1,0 +1,8 @@
+#################################################
+#                                               #
+#   Wilkommen bei der Meidizin Dialog Manager   #
+#                                               #
+#################################################
+
+#> Zum Starten, bitte geben Sie einen Befehl ein
+
