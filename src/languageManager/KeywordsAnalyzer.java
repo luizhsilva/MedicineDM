@@ -1,8 +1,5 @@
 package languageManager;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.util.ArrayList;
 
 /**
@@ -53,15 +50,6 @@ public class KeywordsAnalyzer {
 		this.keywords.add("Pankreaskopf");
 		this.keywords.add("");
 		this.keywords.add("");
-	}
-	
-	private static void loadKeywordsFromFile(String filename) {
-		try {
-			BufferedReader reader = new BufferedReader(new FileReader(filename));
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		}
 	}
 
 }

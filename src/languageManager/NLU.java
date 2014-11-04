@@ -2,8 +2,9 @@ package languageManager;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
@@ -17,9 +18,6 @@ public class NLU {
 	/** Singleton from class NLU */
 	private static NLU singleNLU = null;
 	
-	/** List of predefined keywords */
-	private ArrayList<String> keywords = null;
-	
 	//keywords separated per type
 	private ArrayList<String> commandKeywords;
 	private ArrayList<String> anatStructKeywords;
@@ -31,7 +29,6 @@ public class NLU {
 	 * Private constructor to be called only by {@link #getNLU()}.
 	 */
 	private NLU() {
-		this.keywords = new ArrayList<String>();
 		this.anatStructKeywords = new ArrayList<String>();
 		this.commandKeywords = new ArrayList<String>();
 		this.objectsKeywords = new ArrayList<String>();
@@ -111,8 +108,14 @@ public class NLU {
 	 * 
 	 */
 	private void loadCommandKeywords() {
+		
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/commands.bgram"));
+			//URL url = getClass().getResource("resources/keywords/commands.bgram"); 
+			InputStream input = getClass().getResourceAsStream("keywords/commands.bgram");
+			if (input == null) {
+				System.out.println("Shit");
+			}
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
@@ -131,7 +134,9 @@ public class NLU {
 	 */
 	private void loadProcessesKeywords() {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/processes.bgram"));
+			InputStream input = getClass().getResourceAsStream("keywords/processes.bgram");
+			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/processes.bgram"));
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
@@ -150,7 +155,9 @@ public class NLU {
 	 */
 	private void loadAnatStructKeywords() {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/anat_structs.bgram"));
+			InputStream input = getClass().getResourceAsStream("keywords/anat_structs.bgram");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/anat_structs.bgram"));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments
@@ -169,7 +176,9 @@ public class NLU {
 	 */
 	private void loadObjectsKeywords() {
 		try {
-			BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/other_objects.bgram"));
+			InputStream input = getClass().getResourceAsStream("keywords/other_objects.bgram");
+			BufferedReader reader = new BufferedReader(new InputStreamReader(input));
+			//BufferedReader reader = new BufferedReader(new FileReader("resources/keywords/other_objects.bgram"));
 			String line;
 			while ((line = reader.readLine()) != null) {
 				if (!line.equals("") && !line.startsWith("//")) //ignore comments

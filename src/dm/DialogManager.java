@@ -1,7 +1,5 @@
 package dm;
 
-import java.util.ArrayList;
-
 import languageManager.KeywordCapsule;
 import languageManager.NLG;
 import languageManager.NLU;
