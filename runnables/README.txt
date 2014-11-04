@@ -24,7 +24,7 @@
 	----------
 	
 	The file medicinedm_alhpa1.jar can be start through command line
-	with 'java -jar medicinedm_alpha1.jar'. It will be promptly wait for
+	with 'java -jar medicinedm_alpha2.jar'. It will be promptly wait for
 	a user input, answering in accordance. To programm can be finished
 	with the input 'shut down'.
 	
