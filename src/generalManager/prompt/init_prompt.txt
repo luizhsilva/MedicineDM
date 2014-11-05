@@ -6,6 +6,21 @@
 #                            version alpha 4                           #
 #                                                                      #
 ########################################################################
+#                                                                      #
+#     Beispiele von Befehlen:                                          #
+#                                                                      #
+#     - 'Starte Darmvermessung'                                        #
+#     - 'Zeig mir die rechte Niere'                                    #
+#     - 'Wo ist die Milz'                                              #
+#     - 'Blende aus Uhrzeit'                                           #
+#     - 'Beende Lehrmodus'                                             #
+#     - 'Zeig mir Tumor in der Milz'                                   #
+#                                                                      #
+#     Für die komplette Liste von Befehlen Sehen Sie sich bitte die    #
+#     'Readme' Datei an.                                               #
+#                                                                      #	
+########################################################################
+
 
 #> Zum Starten, geben Sie bitte einen Befehl ein
 

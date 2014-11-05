@@ -45,6 +45,15 @@ public class NLG {
 		//Wo ist
 		} else if (currentState == CommandState.WOIST) {
 			if (capsule.getAnatStructKeywords().size() != 0) {
+				//Wo ist Tumor in Organ
+				if(capsule.getAnatStructKeywords().contains("Tumor")) {
+					if(capsule.getAnatStructKeywords().size() > 1) {
+						return ">> Hier ist Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
+					}
+					else {
+						return ">> Hier ist Tumor <<";
+					}
+				}
 				return ">> Hier ist " + capsule.getAnatStructKeywords().get(0) + " <<";
 			} else {
 				return "-- Richtiger Satzbau: Wo ist + anatomische Struktur --";
