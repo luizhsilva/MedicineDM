@@ -27,6 +27,9 @@ Aorta
 Vena cava
 Resektionslinie
 Gefäßbaum
+Gefaeßbaum
+Gefässbaum
+Gefaessbaum
 // At the moment it's important to leave the keyword 'Tumor' at the end of the list
 // To be changed in future releases.
 Tumor

@@ -1,7 +1,7 @@
 
 ########################################################################
 #                                                                      #
-#                Wilkommen beim Meidizin Dialog Manager                #
+#                Wilkommen beim Medizin Dialog Manager                 #
 #                                                                      #
 #                            version alpha 4                           #
 #                                                                      #

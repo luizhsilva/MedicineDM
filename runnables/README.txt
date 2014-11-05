@@ -82,6 +82,7 @@
 	- Navigation (also seen as Object)
 	- Virtuelles Modell/ Virtuelle Modell (also seen as Object)
 	- 3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion (also seen as Object)
+	- Darmvermessung
 	- Lehrmodus
 	- CT-Modus/ CT Modus
 	
