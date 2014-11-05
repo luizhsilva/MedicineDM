@@ -15,7 +15,11 @@
 	given in text form through a keyboard, simply returning a feedback
 	of what would happen. It does not support Error Handling.
 	
-	Small issues fixed and user prompt was added.
+	Grammar mistakes fixed.
+	
+	User prompt and simple interface added.
+	
+	New vocabulary added.
 	
 	Documentation
 	-------------
@@ -25,9 +29,9 @@
 	How to use
 	----------
 	
-	The file medicinedm_alhpa3.jar can be start through command line
-	with 'java -jar medicinedm_alpha3.jar'. It will be promptly wait for
-	a user input, answering in accordance. To program can be finished
+	The file medicinedm_alhpa4.jar can be started through command line
+	with 'java -jar medicinedm_alpha4.jar'. It will promptly wait for
+	a user input, answering in accordance. The program can be finished
 	with the input 'shut down'.
 	
 	Commands understood (both upper and lower case accepted):
