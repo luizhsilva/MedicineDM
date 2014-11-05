@@ -17,7 +17,8 @@ public class NLG {
 	}
 	
 	/**
-	 * TODO
+	 * TODO improve NLG. Maybe just build a sentence in a String and return just once at the end.
+	 *
 	 * Prototype
 	 * @return
 	 */
@@ -33,7 +34,8 @@ public class NLG {
 						return ">> Zeige Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
 					}
 					else {
-						return "xx Richtiger Satzbau: Zeig mir Tumor in + anatomische Struktur xx";
+						//return "xx Richtiger Satzbau: Zeig mir Tumor in + anatomische Struktur xx";
+						return ">> Zeige Tumor <<";
 					}
 				}
 				return ">> Zeige " + capsule.getAnatStructKeywords().get(0) + " <<";

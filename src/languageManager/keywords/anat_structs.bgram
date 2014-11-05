@@ -1,15 +1,32 @@
 //Organs
+//Something to be noticed: if a keyword has adjectives, the version with adjectives
+//has to come before the keyword alone!! This WILL be changed in future releases
+//because it's a horrible Workaround-oriented programming!!
+linker Ureter
+linken Ureter
+rechter Ureter
+rechten Ureter
 Ureter
 Milz
+linke Niere
+linker Niere
+rechte Niere
+rechter Niere
 Niere
 Pankreas
 Pankreaskopf
 Pankreasschwanz
 Magen
 Leber
+linker Leberlappen
+linken Leberlappen
+rechter Leberlappen
+rechten Leberlappen
 Leberlappen
 Aorta
 Vena cava
 Resektionslinie
 Gefäßbaum
+// At the moment it's important to leave the keyword 'Tumor' at the end of the list
+// To be changed in future releases.
 Tumor

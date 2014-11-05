@@ -7,5 +7,5 @@
 #                                                                      #
 ########################################################################
 
-#> Zum Starten, bitte geben Sie einen Befehl ein
+#> Zum Starten, geben Sie bitte einen Befehl ein
 
