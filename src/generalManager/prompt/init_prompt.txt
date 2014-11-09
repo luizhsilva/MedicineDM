@@ -1,9 +1,9 @@
 
 ########################################################################
 #                                                                      #
-#                Wilkommen beim Medizin Dialog Manager                 #
+#                Willkommen beim Medizin Dialog Manager                #
 #                                                                      #
-#                            version alpha 4                           #
+#                            version alpha 5                           #
 #                                                                      #
 ########################################################################
 #                                                                      #
@@ -12,11 +12,11 @@
 #     - 'Starte Darmvermessung'                                        #
 #     - 'Zeig mir die rechte Niere'                                    #
 #     - 'Wo ist die Milz'                                              #
-#     - 'Blende aus Uhrzeit'                                           #
+#     - 'Blende Uhrzeit aus'                                           #
 #     - 'Beende Lehrmodus'                                             #
-#     - 'Zeig mir Tumor in der Milz'                                   #
+#     - 'Zeig mir den Tumor in der Milz'                               #
 #                                                                      #
-#     Für die komplette Liste von Befehlen Sehen Sie sich bitte die    #
+#     Für die komplette Liste von Befehlen sehen Sie sich bitte die    #
 #     'Readme' Datei an.                                               #
 #                                                                      #	
 ########################################################################

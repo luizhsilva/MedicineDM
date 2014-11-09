@@ -15,9 +15,7 @@
 	given in text form through a keyboard, simply returning a feedback
 	of what would happen. It does not support Error Handling.
 	
-	Grammar mistakes fixed.
-	
-	User prompt and simple interface added.
+	More Grammar mistakes fixed.
 	
 	New vocabulary added.
 	
@@ -29,8 +27,8 @@
 	How to use
 	----------
 	
-	The file medicinedm_alhpa4.jar can be started through command line
-	with 'java -jar medicinedm_alpha4.jar'. It will promptly wait for
+	The file medicinedm_alhpa5.jar can be started through command line
+	with 'java -jar medicinedm_alpha5.jar'. It will promptly wait for
 	a user input, answering in accordance. The program can be finished
 	with the input 'shut down'.
 	
@@ -39,13 +37,14 @@
 	- Wo ist (+ anatomic structure)
 	- Starte (+ Process)
 	- Beende (+ Process)
-	- Blende aus (+ Object/Anatomic Structure)
-	- Blende ein (+ Object/Anatomic Structure)
+	- Blende (+ Object/Anatomic Structure) aus
+	- Blende (+ Object/Anatomic Structure) ein
 	- Messen
+	- shut down
 	
 	The commands will expect an object. The object can be either an
 	anatomic structure or a process, or even other system elements such
-	Time.
+	current Time.
 	
 	Anatomic Structures:
 	- Ureter
@@ -60,29 +59,24 @@
 	- Aorta
 	- Vena cava
 	- Resektionslinie
-	- Gefäßbaum
+	- Gefäßbaum/ Gefaessbaum
 	
 	Objects:
-	- Virtuelles Modell
-	- 3D-Rekonstruktion
-	- Registrierung
+	- Virtuelles Modell/ Virtuelle Modell/ Modell
+	- 3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion/ 3DRekonstruktion
+	- Registrierung (also seen as process)
 	- Registrierungsfehler
 	- Bauchdecke
 	- Endoskopposition
 	- Verschiebungsfeld
-	- Navigation
+	- Navigation (also seen as process)
 	- Uhrzeit
 	- Darmlänge
-	- Darmvermessung
-	- (Navigation)
-	- (Virtuelles Modell/ Virtuelle Model)
-	- (3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion)
 
 	Processes:
-	- Navigation (also seen as Object)
-	- Virtuelles Modell/ Virtuelle Modell (also seen as Object)
-	- 3D-Rekonstruktion/ 3D Rekonstruktion/ 3 D Rekonstruktion (also seen as Object)
 	- Darmvermessung
+	- Navigation (also seen as Object)
+	- Registrierung (also seen as Object)
 	- Lehrmodus
 	- CT-Modus/ CT Modus
 	

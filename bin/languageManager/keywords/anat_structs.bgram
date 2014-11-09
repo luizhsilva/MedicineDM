@@ -2,40 +2,118 @@
 //Something to be noticed: if a keyword has adjectives, the version with adjectives
 //has to come before the keyword alone!! This WILL be changed in future releases
 //because it's a horrible Workaround-oriented programming!!
+//
+//
+//
+//
+der linke Ureter
+dem linken Ureter
+den linken Ureter
+der rechte Ureter
+den rechten Ureter
+dem rechten Ureter
 linker Ureter
 linken Ureter
 linkem Ureter
 rechter Ureter
 rechten Ureter
 rechtem Ureter
+der Ureter
+den Ureter
+dem Ureter
 Ureter
+//
+die Milz
+der Milz
 Milz
+//
+der linken Niere
+die linke Niere
+der rechten Niere
+die rechte Niere
 linke Niere
 linker Niere
 linken Niere
 rechte Niere
 rechter Niere
 rechten Niere
+der Niere
+die Niere
 Niere
+//
+das Pankreas
+dem Pankreas
 Pankreas
+//
+der Pankreaskopf
+den Pankreaskopf
+dem Pankreaskopf
 Pankreaskopf
+//
+der Pankreasschwanz
+den Pankreasschwanz
+dem Pankreasschwanz
 Pankreasschwanz
+//
+der Magen
+dem Magen
+den Magen
 Magen
+//
+die Leber
+der Leber
 Leber
+//
+der linke Leberlappen
+den linken Leberlappen
+dem linken Leberlappen
+der rechte Leberlappen
+den rechten Leberlappen
+dem rechten Leberlappen
 linker Leberlappen
 linken Leberlappen
 linkem Leberlappen
 rechter Leberlappen
 rechten Leberlappen
 rechtem Lebelappen
+der Leberlappen
+den Leberlappen
+dem Leberlappen
 Leberlappen
+//
+die Aorta
+der Aorta
 Aorta
+die Vena cava
+der Vena cava
+die Vena Cava
+der Vena Cava
 Vena cava
+Vena Cava
+//
+die Resektionslinie
+der Resektionslinie
 Resektionslinie
+//
+der Gefäßbaum
+der Gefaeßbaum
+der Gefässbaum
+der Gefaessbaum
+den Gefäßbaum
+den Gefaeßbaum
+den Gefässbaum
+den Gefaessbaum
+dem Gefäßbaum
+dem Gefaeßbaum
+dem Gefässbaum
+dem Gefaessbaum
 Gefäßbaum
 Gefaeßbaum
 Gefässbaum
 Gefaessbaum
+//
 // At the moment it's important to leave the keyword 'Tumor' at the end of the list
 // To be changed in future releases.
+der Tumor
+den Tumor
 Tumor

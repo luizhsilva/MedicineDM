@@ -31,11 +31,11 @@ public class NLG {
 				//Zeig mir Tumor in Organ
 				if(capsule.getAnatStructKeywords().contains("Tumor")) {
 					if(capsule.getAnatStructKeywords().size() > 1) {
-						return ">> Zeige Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
+						return ">> Zeige den Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
 					}
 					else {
 						//return "xx Richtiger Satzbau: Zeig mir Tumor in + anatomische Struktur xx";
-						return ">> Zeige Tumor <<";
+						return ">> Zeige den Tumor <<";
 					}
 				}
 				return ">> Zeige " + capsule.getAnatStructKeywords().get(0) + " <<";
@@ -48,10 +48,10 @@ public class NLG {
 				//Wo ist Tumor in Organ
 				if(capsule.getAnatStructKeywords().contains("Tumor")) {
 					if(capsule.getAnatStructKeywords().size() > 1) {
-						return ">> Hier ist Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
+						return ">> Hier ist der Tumor in " + capsule.getAnatStructKeywords().get(0) + " <<";
 					}
 					else {
-						return ">> Hier ist Tumor <<";
+						return ">> Hier ist der Tumor <<";
 					}
 				}
 				return ">> Hier ist " + capsule.getAnatStructKeywords().get(0) + " <<";
@@ -75,16 +75,16 @@ public class NLG {
 		//Messen
 		} else if (currentState == CommandState.MESSEN) {
 			//TODO check if Darmvermessung began
-			return "Messe";
+			return ">> Messe <<";
 		//Starte
 		} else if (currentState == CommandState.STARTE) {
 			if (capsule.getProcessKeywords().size() != 0) {
-				return ">> " + capsule.getProcessKeywords().get(0) + " wird gestartet." + " <<";
+				return ">> " + capsule.getProcessKeywords().get(0) + " wird gestartet" + " <<";
 			} else return "-- Richtiger Satzbau: Starte + Prozessname --";
 		//Beende
 		} else if (currentState == CommandState.BEENDE) {
 			if (capsule.getProcessKeywords().size() != 0) {
-				return ">> " + capsule.getProcessKeywords().get(0) + " wird beendet." + " <<";
+				return ">> " + capsule.getProcessKeywords().get(0) + " wird beendet" + " <<";
 			} else return "-- Richtiger Satzbau: Beende + Prozessname --";
 		};
 		

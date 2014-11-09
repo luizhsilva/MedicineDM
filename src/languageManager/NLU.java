@@ -48,9 +48,17 @@ public class NLU {
 		ArrayList<String> foundObjectsKeywords = new ArrayList<String>();
 		ArrayList<String> foundProcessKeywords = new ArrayList<String>();
 		
+		
 		//Analysis using regex to make sure to get the right keyword.
 		for (String key: this.commandKeywords) {
 			if (input.toLowerCase().matches(".*\\b" + key.toLowerCase() + "\\b.*")) {
+				if (key.equals("Blende")) {
+					if (input.endsWith("aus")) {
+						foundCommandKeywords.add("Blende aus");
+					} else if (input.endsWith("ein")) {
+						foundCommandKeywords.add("Blende ein");
+					}
+				}
 				foundCommandKeywords.add(key);
 			}
 		}
