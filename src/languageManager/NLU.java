@@ -6,6 +6,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
+//import javax.speech.EngineException;
+//import javax.speech.recognition.*;
+
+import edu.cmu.sphinx.*;
+
 /**
  * Natural Language Understanding. This class provides methods to analyze
  * an input, returning possible states.
@@ -17,6 +22,7 @@ public class NLU {
 	/** Singleton from class NLU */
 	private static NLU singleNLU = null;
 	
+//	private Recognizer recognizer;
 	/** List of predefined keywords */
 	private ArrayList<String> keywords = null;
 	
@@ -182,4 +188,6 @@ public class NLU {
 			e.printStackTrace();
 		}
 	}
+	
+	//public void 
 }
